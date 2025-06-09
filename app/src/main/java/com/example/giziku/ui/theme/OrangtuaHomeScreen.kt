@@ -64,6 +64,7 @@ import com.example.giziku.model.Growth
 import com.example.giziku.util.GrowthViewModel
 import com.example.giziku.util.Nutrisi
 import com.example.giziku.util.NutrisiViewModel
+import com.example.giziku.util.RecommendationViewModel
 import com.example.giziku.util.UserViewModel
 import com.example.giziku.util.UserViewModelFactory
 import com.google.ai.client.generativeai.GenerativeModel
@@ -76,7 +77,7 @@ import java.util.Locale
 
 
 @Composable
-fun OrangtuaHomeScreen(navController: NavController, growthData: List<Growth>, nutrisi: List<Nutrisi>, anakList: List<AnakEntity>) {
+fun OrangtuaHomeScreen(navController: NavController, growthViewModel: GrowthViewModel, nutrisiViewModel: NutrisiViewModel) {
     val context = LocalContext.current
 
     val application = context.applicationContext as Application
@@ -84,6 +85,35 @@ fun OrangtuaHomeScreen(navController: NavController, growthData: List<Growth>, n
 
     val edukasiState by userViewModel.getAllEdukasi().observeAsState(emptyList())
 
+    val growthData by growthViewModel.growthData.collectAsStateWithLifecycle()
+
+    val anakList by userViewModel.anakList.collectAsStateWithLifecycle(emptyList())
+
+    val pertamaAnakId = anakList.firstOrNull()?.id
+
+    val nutrisi by nutrisiViewModel.nutrisi.collectAsStateWithLifecycle()
+
+    val recommendationViewModel: RecommendationViewModel = viewModel()
+
+    val recommendation by recommendationViewModel.recommendation.collectAsStateWithLifecycle()
+
+    LaunchedEffect(Unit) {
+        userViewModel.getAnakByOrangTuaId(userViewModel.getCurrentUserId())
+        nutrisiViewModel.getNutrisiByUserId(userViewModel.getCurrentUserId())
+        growthViewModel.loadGrowth(pertamaAnakId ?: 0)
+    }
+
+    Log.d("GrowthData", "Data pertumbuhan: $growthData")
+    Log.d("AnakList", "Daftar anak: $anakList")
+    Log.d("Nutrisi", "Data nutrisi: $nutrisi")
+
+    LaunchedEffect(nutrisi, growthData) {
+        if (nutrisi.isNotEmpty() && growthData.isNotEmpty()) {
+            recommendationViewModel.loadRecommendation(growthData, nutrisi)
+        } else {
+            Log.d("Recommendation", "Tidak ada data untuk analisis.")
+        }
+    }
 
     val edukasiList = edukasiState
 
@@ -201,26 +231,20 @@ fun OrangtuaHomeScreen(navController: NavController, growthData: List<Growth>, n
             modifier = Modifier.align(Alignment.Start)
         )
 
-        var recommendation by remember { mutableStateOf("") }
-
-        if (growthData.isNotEmpty() && nutrisi.isNotEmpty()) {
-            LaunchedEffect(growthData, nutrisi) {
-                Log.d("OrangtuaHomeScreen", "Growth Data: $growthData")
-                recommendation = getRecommendation(growthData, nutrisi)
-            }
-        } else {
-            Text(text = "Tidak ada data untuk analisis.", fontSize = 14.sp)
-        }
-
-        if (recommendation.isNotEmpty()) {
+        if (recommendation != null) {
             Text(
-                text = recommendation,
+                text = recommendation ?: "Tidak ada rekomendasi yang tersedia.",
                 fontSize = 14.sp,
                 modifier = Modifier.padding(vertical = 8.dp)
             )
         } else {
             Text(text = "Sedang memproses rekomendasi...", fontSize = 14.sp)
         }
+
+//        if (growthData.isNotEmpty()) {
+//            GrafikPerTanggal(data = growthData)
+//        }
+
     }
 }
 
@@ -530,31 +554,4 @@ fun InputField(label: String, value: String, onValueChange: (String) -> Unit) {
         )
         Spacer(modifier = Modifier.height(8.dp))
     }
-}
-
-suspend fun getRecommendation(
-    growthData: List<Growth>,
-    nutrisiData: List<Nutrisi>
-): String {
-    val model = GenerativeModel(
-        modelName = "gemini-2.0-flash",
-        apiKey = "AIzaSyCpJ61DKwKdbz2XfAGRuQLAGoQG1ykNR7k",
-    )
-
-    val content = Content.Builder()
-        .text(
-            """
-            Dari data-data ini, buat rekomendasi gizi untuk anak:
-            Growth Data:
-            ${growthData.joinToString("\n") { "Date: ${it.tanggal}, Height: ${it.tinggiBadan}, Weight: ${it.beratBadan}" }}
-            Nutritional Data:
-            ${nutrisiData.joinToString("\n") { "Date: ${it.createdAt}, Calories: ${it.kalori}, Protein: ${it.protein}, Fat: ${it.lemak}, Carbs: ${it.karbohidrat}" }}
-                """.trimIndent()
-        )
-        .build()
-
-    val answer = model.generateContent(content).text ?:
-    "Failed to generate content"
-
-    return answer
 }
