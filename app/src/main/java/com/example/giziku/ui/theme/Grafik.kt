@@ -1,8 +1,10 @@
 package com.example.giziku.ui.theme
 
+import android.icu.text.SimpleDateFormat
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.intl.Locale
 import com.example.giziku.model.Growth
 import me.bytebeats.views.charts.line.LineChart
 import me.bytebeats.views.charts.line.LineChartData
@@ -15,43 +17,27 @@ import me.bytebeats.views.charts.line.LineChartData.Point
 
 @Composable
 fun GrafikPerTanggal(data: List<Growth>) {
+    // Batasi jumlah data agar grafik tidak terlalu padat
+    val recentData = data.takeLast(30)
+
     LineChart(
         lineChartData = LineChartData(
-            points = data.map { item ->
-                val yValue = item.beratBadan.toFloatOrNull() ?: 0f
+            points = recentData.flatMap { item ->
+                val yValue1 = item.beratBadan.toFloatOrNull() ?: 0f
                 val yValue2 = item.tinggiBadan.toFloatOrNull() ?: 0f
-                val xLabel = item.tanggal.toString()
-                Point(yValue, xLabel)
-                Point(yValue2, xLabel)
+                val xLabel = item.tanggal
+                listOf(
+                    Point(yValue1, xLabel.toString()), // Berat Badan
+                    Point(yValue2, xLabel.toString())  // Tinggi Badan
+                )
             }
         ),
         modifier = Modifier.fillMaxSize(),
         animation = simpleChartAnimation(),
         pointDrawer = FilledCircularPointDrawer(),
         lineDrawer = SolidLineDrawer(),
-        xAxisDrawer = SimpleXAxisDrawer(),
+        xAxisDrawer = SimpleXAxisDrawer(), // tampilkan 1 dari 3 label
         yAxisDrawer = SimpleYAxisDrawer(),
         horizontalOffset = 5f
     )
 }
-
-@Composable
-fun LineChartView() {
-    LineChart(
-        lineChartData = LineChartData(
-            points = listOf(
-                Point(40.0F, "Line 1"),
-                Point(30.0f, "Line 2"),
-            )
-        ),
-        // Optional properties.
-        modifier = Modifier.fillMaxSize(),
-        animation = simpleChartAnimation(),
-        pointDrawer = FilledCircularPointDrawer(),
-        lineDrawer = SolidLineDrawer(),
-        xAxisDrawer = SimpleXAxisDrawer(),
-        yAxisDrawer = SimpleYAxisDrawer(),
-        horizontalOffset = 5f
-    )
-}
-

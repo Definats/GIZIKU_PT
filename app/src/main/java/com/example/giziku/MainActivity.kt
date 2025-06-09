@@ -12,6 +12,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -72,9 +73,29 @@ class MainActivity : ComponentActivity() {
             val repository = GrowthRepository(daoGrowth)
             val growthViewModel: GrowthViewModel = viewModel(factory = GrowthViewModelFactory(repository))
 
+
+
             LaunchedEffect(key1 = cameraPermissionState.status) {
                 if (!cameraPermissionState.status.isGranted) {
                     cameraPermissionState.launchPermissionRequest()
+                }
+            }
+
+            val growthData by growthViewModel.growthData.collectAsStateWithLifecycle()
+
+            val anakList by userViewModel.anakList.collectAsStateWithLifecycle(emptyList())
+
+            val nutrisi by nutrisiViewModel.nutrisi.collectAsStateWithLifecycle(emptyList())
+
+            LaunchedEffect(userViewModel.getCurrentUserId()) {
+                userViewModel.getAnakByOrangTuaId(userViewModel.getCurrentUserId())
+                nutrisiViewModel.getNutrisiByUserId(userViewModel.getCurrentUserId())
+            }
+
+            LaunchedEffect(anakList) {
+                if (anakList.isNotEmpty()) {
+
+                    growthViewModel.loadGrowth(anakList[0].id)
                 }
             }
 
@@ -113,7 +134,7 @@ class MainActivity : ComponentActivity() {
                     )
                 }
 
-                composable("homeorangtua") { OrangtuaHomeScreen(navController, growthViewModel) } // Pastikan ini benar
+                composable("homeorangtua") { OrangtuaHomeScreen(navController, growthData, nutrisi, anakList) } // Pastikan ini benar
                 composable("pendaftaran") { OrangtuaPendaftarananakScreen(navController) } // Pastikan ini benar
                 composable("profileorangtua") { OrangtuaProfileScreen(navController) } // Pastikan ini benar
                 composable("editprofileorangtua") { OrangtuaEditProfileScreen(navController) } // Pastikan ini benar

@@ -7,6 +7,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.example.giziku.model.AnakEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface AnakDao {
@@ -15,7 +16,7 @@ interface AnakDao {
     suspend fun insertAnak(anak: AnakEntity)
 
     @Query("SELECT * FROM anak WHERE orangTuaId = :orangTuaId")
-    suspend fun getAnakByOrangTuaId(orangTuaId: Long): List<AnakEntity>
+    fun getAnakByOrangTuaId(orangTuaId: Long): Flow<List<AnakEntity>>
 
     @Query("SELECT * FROM anak WHERE id = :id")
     suspend fun getAnakById(id: Int): AnakEntity?

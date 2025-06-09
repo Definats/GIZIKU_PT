@@ -9,6 +9,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.giziku.database.AppDatabase
 import com.example.giziku.database.UserRepository
 import com.example.giziku.model.AnakEntity
@@ -20,6 +21,10 @@ import com.example.giziku.model.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
@@ -36,6 +41,9 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
     init {
         userRepository = UserRepository(userDao, profileOrangTuaDao, profileTenagaPendidikanDao, profileTenagaMedisDao, anakDao, edukasiDao)
     }
+
+    val _anakList = MutableStateFlow<List<AnakEntity>>(emptyList())
+    val anakList: Flow<List<AnakEntity>> get() = _anakList
 
     fun logout() {
         viewModelScope.launch {
@@ -161,9 +169,15 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun getAnakByOrangTuaId(orangTuaId: Long): List<AnakEntity> {
-        return runBlocking {
-            userRepository.getAnakByOrangTuaId(orangTuaId)
+//    fun getAnakByOrangTuaId(orangTuaId: Long) : StateFlow<List<AnakEntity>> {
+//        return userRepository.getAnakByOrangTuaId(orangTuaId)
+//            .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+//    }
+    fun getAnakByOrangTuaId(orangTuaId: Long) {
+        viewModelScope.launch {
+            userRepository.getAnakByOrangTuaId(orangTuaId).collect { anakList ->
+                _anakList.value = anakList
+            }
         }
     }
 

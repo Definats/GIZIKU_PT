@@ -60,9 +60,14 @@ import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import com.example.giziku.R
 import com.example.giziku.model.AnakEntity
+import com.example.giziku.model.Growth
 import com.example.giziku.util.GrowthViewModel
+import com.example.giziku.util.Nutrisi
+import com.example.giziku.util.NutrisiViewModel
 import com.example.giziku.util.UserViewModel
 import com.example.giziku.util.UserViewModelFactory
+import com.google.ai.client.generativeai.GenerativeModel
+import com.google.ai.client.generativeai.type.Content
 import java.io.File
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
@@ -71,25 +76,14 @@ import java.util.Locale
 
 
 @Composable
-fun OrangtuaHomeScreen(navController: NavController, growthViewModel: GrowthViewModel) {
+fun OrangtuaHomeScreen(navController: NavController, growthData: List<Growth>, nutrisi: List<Nutrisi>, anakList: List<AnakEntity>) {
     val context = LocalContext.current
-    var anakList by remember { mutableStateOf<List<AnakEntity>>(emptyList()) }
 
     val application = context.applicationContext as Application
     val userViewModel: UserViewModel = viewModel(factory = UserViewModelFactory(application))
 
     val edukasiState by userViewModel.getAllEdukasi().observeAsState(emptyList())
 
-    val growth = growthViewModel.growthData.collectAsStateWithLifecycle()
-
-    LaunchedEffect(Unit) {
-        val currentUserId = userViewModel.getCurrentUserId()
-        anakList = userViewModel.getAnakByOrangTuaId(currentUserId)
-    }
-
-    LaunchedEffect(anakList.isNotEmpty()) {
-        growthViewModel.loadGrowth(anakList.first().id)
-    }
 
     val edukasiList = edukasiState
 
@@ -207,10 +201,26 @@ fun OrangtuaHomeScreen(navController: NavController, growthViewModel: GrowthView
             modifier = Modifier.align(Alignment.Start)
         )
 
-        if (growth.value.isNotEmpty()) {
-            GrafikPerTanggal(data = growth.value)
+        var recommendation by remember { mutableStateOf("") }
+
+        if (growthData.isNotEmpty() && nutrisi.isNotEmpty()) {
+            LaunchedEffect(growthData, nutrisi) {
+                Log.d("OrangtuaHomeScreen", "Growth Data: $growthData")
+                recommendation = getRecommendation(growthData, nutrisi)
+            }
+        } else {
+            Text(text = "Tidak ada data untuk analisis.", fontSize = 14.sp)
         }
 
+        if (recommendation.isNotEmpty()) {
+            Text(
+                text = recommendation,
+                fontSize = 14.sp,
+                modifier = Modifier.padding(vertical = 8.dp)
+            )
+        } else {
+            Text(text = "Sedang memproses rekomendasi...", fontSize = 14.sp)
+        }
     }
 }
 
@@ -520,4 +530,31 @@ fun InputField(label: String, value: String, onValueChange: (String) -> Unit) {
         )
         Spacer(modifier = Modifier.height(8.dp))
     }
+}
+
+suspend fun getRecommendation(
+    growthData: List<Growth>,
+    nutrisiData: List<Nutrisi>
+): String {
+    val model = GenerativeModel(
+        modelName = "gemini-2.0-flash",
+        apiKey = "AIzaSyCpJ61DKwKdbz2XfAGRuQLAGoQG1ykNR7k",
+    )
+
+    val content = Content.Builder()
+        .text(
+            """
+            Dari data-data ini, buat rekomendasi gizi untuk anak:
+            Growth Data:
+            ${growthData.joinToString("\n") { "Date: ${it.tanggal}, Height: ${it.tinggiBadan}, Weight: ${it.beratBadan}" }}
+            Nutritional Data:
+            ${nutrisiData.joinToString("\n") { "Date: ${it.createdAt}, Calories: ${it.kalori}, Protein: ${it.protein}, Fat: ${it.lemak}, Carbs: ${it.karbohidrat}" }}
+                """.trimIndent()
+        )
+        .build()
+
+    val answer = model.generateContent(content).text ?:
+    "Failed to generate content"
+
+    return answer
 }

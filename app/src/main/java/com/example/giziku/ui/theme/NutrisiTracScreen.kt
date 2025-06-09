@@ -36,7 +36,11 @@ fun NutriTracScreen(
     val scope = rememberCoroutineScope()
     var isSaved by remember { mutableStateOf(false) }
 
-    val nutrisi by nutrisiViewModel.getNutrisiByUserId(userId).collectAsStateWithLifecycle()
+    val nutrisi by nutrisiViewModel.nutrisi.collectAsStateWithLifecycle()
+
+    LaunchedEffect(Unit) {
+       nutrisiViewModel.getNutrisiByUserId(userId)
+    }
 
     Scaffold(
         topBar = {

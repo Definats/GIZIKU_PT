@@ -88,7 +88,7 @@ class UserRepository(
         return userDao.insertUser(user) // pastikan DAO insertUser return Long
     }
 
-    suspend fun getAnakByOrangTuaId(orangTuaId: Long): List<AnakEntity> {
+    fun getAnakByOrangTuaId(orangTuaId: Long): Flow<List<AnakEntity>> {
         return anakDao.getAnakByOrangTuaId(orangTuaId)
     }
 

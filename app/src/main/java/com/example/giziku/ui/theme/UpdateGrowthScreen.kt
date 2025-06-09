@@ -69,7 +69,6 @@ fun UpdateGrowthScreen(navController: NavController, anakId: Long, viewModel: Gr
     var beratBadan by rememberSaveable { mutableStateOf("") }
     var tinggiBadan by rememberSaveable { mutableStateOf("") }
 
-    // Gunakan remember supaya state growthHistory tetap bertahan dan Compose bisa memantau perubahan
     val growthHistory = viewModel.growthData.collectAsStateWithLifecycle()
 
     val context = LocalContext.current
