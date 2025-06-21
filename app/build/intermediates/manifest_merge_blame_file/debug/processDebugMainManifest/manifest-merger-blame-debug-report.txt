@@ -1,0 +1,245 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.giziku"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="35" />
+10
+11    <uses-permission android:name="android.permission.CAMERA" />
+11-->C:\PT\app\src\main\AndroidManifest.xml:4:5-65
+11-->C:\PT\app\src\main\AndroidManifest.xml:4:22-62
+12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+12-->C:\PT\app\src\main\AndroidManifest.xml:5:5-81
+12-->C:\PT\app\src\main\AndroidManifest.xml:5:22-78
+13
+14    <permission
+14-->[androidx.core:core:1.15.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\e20c942c7d427ff63cde1df8c3ef03c6\transformed\core-1.15.0\AndroidManifest.xml:22:5-24:47
+15        android:name="com.example.giziku.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+15-->[androidx.core:core:1.15.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\e20c942c7d427ff63cde1df8c3ef03c6\transformed\core-1.15.0\AndroidManifest.xml:23:9-81
+16        android:protectionLevel="signature" />
+16-->[androidx.core:core:1.15.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\e20c942c7d427ff63cde1df8c3ef03c6\transformed\core-1.15.0\AndroidManifest.xml:24:9-44
+17
+18    <uses-permission android:name="com.example.giziku.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+18-->[androidx.core:core:1.15.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\e20c942c7d427ff63cde1df8c3ef03c6\transformed\core-1.15.0\AndroidManifest.xml:26:5-97
+18-->[androidx.core:core:1.15.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\e20c942c7d427ff63cde1df8c3ef03c6\transformed\core-1.15.0\AndroidManifest.xml:26:22-94
+19    <uses-permission android:name="android.permission.REORDER_TASKS" />
+19-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:24:5-72
+19-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:24:22-69
+20    <uses-permission android:name="android.permission.INTERNET" />
+20-->[com.google.ai.client.generativeai:generativeai:0.9.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\e92ce7e37520a5eb7ff930a23dd62c1c\transformed\generativeai-0.9.0\AndroidManifest.xml:22:5-67
+20-->[com.google.ai.client.generativeai:generativeai:0.9.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\e92ce7e37520a5eb7ff930a23dd62c1c\transformed\generativeai-0.9.0\AndroidManifest.xml:22:22-64
+21
+22    <queries>
+22-->[androidx.test:runner:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\b9ac1a4ad6f8f17111156960475451fc\transformed\runner-1.6.1\AndroidManifest.xml:24:5-28:15
+23        <package android:name="androidx.test.orchestrator" />
+23-->[androidx.test:runner:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\b9ac1a4ad6f8f17111156960475451fc\transformed\runner-1.6.1\AndroidManifest.xml:25:9-62
+23-->[androidx.test:runner:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\b9ac1a4ad6f8f17111156960475451fc\transformed\runner-1.6.1\AndroidManifest.xml:25:18-59
+24        <package android:name="androidx.test.services" />
+24-->[androidx.test:runner:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\b9ac1a4ad6f8f17111156960475451fc\transformed\runner-1.6.1\AndroidManifest.xml:26:9-58
+24-->[androidx.test:runner:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\b9ac1a4ad6f8f17111156960475451fc\transformed\runner-1.6.1\AndroidManifest.xml:26:18-55
+25        <package android:name="com.google.android.apps.common.testing.services" />
+25-->[androidx.test:runner:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\b9ac1a4ad6f8f17111156960475451fc\transformed\runner-1.6.1\AndroidManifest.xml:27:9-83
+25-->[androidx.test:runner:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\b9ac1a4ad6f8f17111156960475451fc\transformed\runner-1.6.1\AndroidManifest.xml:27:18-80
+26    </queries>
+27
+28    <application
+28-->C:\PT\app\src\main\AndroidManifest.xml:6:5-27:19
+29        android:allowBackup="true"
+29-->C:\PT\app\src\main\AndroidManifest.xml:7:9-35
+30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+30-->[androidx.core:core:1.15.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\e20c942c7d427ff63cde1df8c3ef03c6\transformed\core-1.15.0\AndroidManifest.xml:28:18-86
+31        android:dataExtractionRules="@xml/data_extraction_rules"
+31-->C:\PT\app\src\main\AndroidManifest.xml:8:9-65
+32        android:debuggable="true"
+33        android:extractNativeLibs="false"
+34        android:fullBackupContent="@xml/backup_rules"
+34-->C:\PT\app\src\main\AndroidManifest.xml:9:9-54
+35        android:icon="@mipmap/ic_launcher"
+35-->C:\PT\app\src\main\AndroidManifest.xml:10:9-43
+36        android:label="@string/app_name"
+36-->C:\PT\app\src\main\AndroidManifest.xml:11:9-41
+37        android:roundIcon="@mipmap/ic_launcher_round"
+37-->C:\PT\app\src\main\AndroidManifest.xml:12:9-54
+38        android:supportsRtl="true"
+38-->C:\PT\app\src\main\AndroidManifest.xml:13:9-35
+39        android:theme="@style/Theme.Giziku" >
+39-->C:\PT\app\src\main\AndroidManifest.xml:14:9-44
+40        <activity
+40-->C:\PT\app\src\main\AndroidManifest.xml:16:9-26:20
+41            android:name="com.example.giziku.MainActivity"
+41-->C:\PT\app\src\main\AndroidManifest.xml:17:13-41
+42            android:exported="true"
+42-->C:\PT\app\src\main\AndroidManifest.xml:18:13-36
+43            android:label="@string/app_name"
+43-->C:\PT\app\src\main\AndroidManifest.xml:19:13-45
+44            android:theme="@style/Theme.Giziku" >
+44-->C:\PT\app\src\main\AndroidManifest.xml:20:13-48
+45            <intent-filter>
+45-->C:\PT\app\src\main\AndroidManifest.xml:21:13-25:29
+46                <action android:name="android.intent.action.MAIN" />
+46-->C:\PT\app\src\main\AndroidManifest.xml:22:17-69
+46-->C:\PT\app\src\main\AndroidManifest.xml:22:25-66
+47
+48                <category android:name="android.intent.category.LAUNCHER" />
+48-->C:\PT\app\src\main\AndroidManifest.xml:24:17-77
+48-->C:\PT\app\src\main\AndroidManifest.xml:24:27-74
+49            </intent-filter>
+50        </activity>
+51        <activity
+51-->[androidx.compose.ui:ui-test-manifest:1.7.2] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\58b3f9db0c8120c01dc40f034fe5117f\transformed\ui-test-manifest-1.7.2\AndroidManifest.xml:23:9-25:39
+52            android:name="androidx.activity.ComponentActivity"
+52-->[androidx.compose.ui:ui-test-manifest:1.7.2] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\58b3f9db0c8120c01dc40f034fe5117f\transformed\ui-test-manifest-1.7.2\AndroidManifest.xml:24:13-63
+53            android:exported="true" />
+53-->[androidx.compose.ui:ui-test-manifest:1.7.2] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\58b3f9db0c8120c01dc40f034fe5117f\transformed\ui-test-manifest-1.7.2\AndroidManifest.xml:25:13-36
+54        <activity
+54-->[androidx.compose.ui:ui-tooling-android:1.7.2] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\b3c77d5fc7eca633af09cc3a242e4142\transformed\ui-tooling-release\AndroidManifest.xml:23:9-25:39
+55            android:name="androidx.compose.ui.tooling.PreviewActivity"
+55-->[androidx.compose.ui:ui-tooling-android:1.7.2] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\b3c77d5fc7eca633af09cc3a242e4142\transformed\ui-tooling-release\AndroidManifest.xml:24:13-71
+56            android:exported="true" />
+56-->[androidx.compose.ui:ui-tooling-android:1.7.2] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\b3c77d5fc7eca633af09cc3a242e4142\transformed\ui-tooling-release\AndroidManifest.xml:25:13-36
+57
+58        <service
+58-->[androidx.camera:camera-camera2:1.4.2] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\954dc4bdeb414063ac0493091e9009a4\transformed\camera-camera2-1.4.2\AndroidManifest.xml:24:9-33:19
+59            android:name="androidx.camera.core.impl.MetadataHolderService"
+59-->[androidx.camera:camera-camera2:1.4.2] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\954dc4bdeb414063ac0493091e9009a4\transformed\camera-camera2-1.4.2\AndroidManifest.xml:25:13-75
+60            android:enabled="false"
+60-->[androidx.camera:camera-camera2:1.4.2] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\954dc4bdeb414063ac0493091e9009a4\transformed\camera-camera2-1.4.2\AndroidManifest.xml:26:13-36
+61            android:exported="false" >
+61-->[androidx.camera:camera-camera2:1.4.2] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\954dc4bdeb414063ac0493091e9009a4\transformed\camera-camera2-1.4.2\AndroidManifest.xml:27:13-37
+62            <meta-data
+62-->[androidx.camera:camera-camera2:1.4.2] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\954dc4bdeb414063ac0493091e9009a4\transformed\camera-camera2-1.4.2\AndroidManifest.xml:30:13-32:89
+63                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+63-->[androidx.camera:camera-camera2:1.4.2] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\954dc4bdeb414063ac0493091e9009a4\transformed\camera-camera2-1.4.2\AndroidManifest.xml:31:17-103
+64                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+64-->[androidx.camera:camera-camera2:1.4.2] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\954dc4bdeb414063ac0493091e9009a4\transformed\camera-camera2-1.4.2\AndroidManifest.xml:32:17-86
+65        </service>
+66
+67        <provider
+67-->[androidx.emoji2:emoji2:1.3.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\c8171266a6eeceea1e33ee2f495a84c2\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+68            android:name="androidx.startup.InitializationProvider"
+68-->[androidx.emoji2:emoji2:1.3.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\c8171266a6eeceea1e33ee2f495a84c2\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+69            android:authorities="com.example.giziku.androidx-startup"
+69-->[androidx.emoji2:emoji2:1.3.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\c8171266a6eeceea1e33ee2f495a84c2\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+70            android:exported="false" >
+70-->[androidx.emoji2:emoji2:1.3.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\c8171266a6eeceea1e33ee2f495a84c2\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+71            <meta-data
+71-->[androidx.emoji2:emoji2:1.3.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\c8171266a6eeceea1e33ee2f495a84c2\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+72                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+72-->[androidx.emoji2:emoji2:1.3.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\c8171266a6eeceea1e33ee2f495a84c2\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+73                android:value="androidx.startup" />
+73-->[androidx.emoji2:emoji2:1.3.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\c8171266a6eeceea1e33ee2f495a84c2\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+74            <meta-data
+74-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\2d4e353002cfd144590c85d7f8242f39\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:29:13-31:52
+75                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+75-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\2d4e353002cfd144590c85d7f8242f39\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:30:17-78
+76                android:value="androidx.startup" />
+76-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\2d4e353002cfd144590c85d7f8242f39\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:31:17-49
+77            <meta-data
+77-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+78                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+78-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+79                android:value="androidx.startup" />
+79-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+80        </provider>
+81
+82        <activity
+82-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:27:9-34:20
+83            android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
+83-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:28:13-99
+84            android:exported="true"
+84-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:29:13-36
+85            android:theme="@style/WhiteBackgroundTheme" >
+85-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:30:13-56
+86            <intent-filter android:priority="-100" >
+86-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:31:13-33:29
+86-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:31:28-51
+87                <category android:name="android.intent.category.LAUNCHER" />
+87-->C:\PT\app\src\main\AndroidManifest.xml:24:17-77
+87-->C:\PT\app\src\main\AndroidManifest.xml:24:27-74
+88            </intent-filter>
+89        </activity>
+90        <activity
+90-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:35:9-42:20
+91            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity"
+91-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:36:13-95
+92            android:exported="true"
+92-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:37:13-36
+93            android:theme="@style/WhiteBackgroundTheme" >
+93-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:38:13-56
+94            <intent-filter android:priority="-100" >
+94-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:31:13-33:29
+94-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:31:28-51
+95                <category android:name="android.intent.category.LAUNCHER" />
+95-->C:\PT\app\src\main\AndroidManifest.xml:24:17-77
+95-->C:\PT\app\src\main\AndroidManifest.xml:24:27-74
+96            </intent-filter>
+97        </activity>
+98        <activity
+98-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:43:9-50:20
+99            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity"
+99-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:44:13-103
+100            android:exported="true"
+100-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:45:13-36
+101            android:theme="@style/WhiteBackgroundDialogTheme" >
+101-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:46:13-62
+102            <intent-filter android:priority="-100" >
+102-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:31:13-33:29
+102-->[androidx.test:core:1.6.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\0e779bf6a0923945f7e3b51199c9873f\transformed\core-1.6.1\AndroidManifest.xml:31:28-51
+103                <category android:name="android.intent.category.LAUNCHER" />
+103-->C:\PT\app\src\main\AndroidManifest.xml:24:17-77
+103-->C:\PT\app\src\main\AndroidManifest.xml:24:27-74
+104            </intent-filter>
+105        </activity>
+106
+107        <service
+107-->[androidx.room:room-runtime-android:2.7.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\838a65fff301a01e4f2230a40e4f9b0c\transformed\room-runtime-release\AndroidManifest.xml:24:9-28:63
+108            android:name="androidx.room.MultiInstanceInvalidationService"
+108-->[androidx.room:room-runtime-android:2.7.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\838a65fff301a01e4f2230a40e4f9b0c\transformed\room-runtime-release\AndroidManifest.xml:25:13-74
+109            android:directBootAware="true"
+109-->[androidx.room:room-runtime-android:2.7.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\838a65fff301a01e4f2230a40e4f9b0c\transformed\room-runtime-release\AndroidManifest.xml:26:13-43
+110            android:exported="false" />
+110-->[androidx.room:room-runtime-android:2.7.1] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\838a65fff301a01e4f2230a40e4f9b0c\transformed\room-runtime-release\AndroidManifest.xml:27:13-37
+111
+112        <receiver
+112-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+113            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+113-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+114            android:directBootAware="false"
+114-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+115            android:enabled="true"
+115-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+116            android:exported="true"
+116-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+117            android:permission="android.permission.DUMP" >
+117-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+118            <intent-filter>
+118-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+119                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+119-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+119-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+120            </intent-filter>
+121            <intent-filter>
+121-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+122                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+122-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+122-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+123            </intent-filter>
+124            <intent-filter>
+124-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+125                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+125-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+125-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+126            </intent-filter>
+127            <intent-filter>
+127-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+128                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+128-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+128-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\NitroV15\.gradle\caches\8.10.2\transforms\9f7d89dc13853b9d155fbae8eed6bf65\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+129            </intent-filter>
+130        </receiver>
+131    </application>
+132
+133</manifest>

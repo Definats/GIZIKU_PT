@@ -1,0 +1,102 @@
+[
+    {
+        "merged": "com.example.giziku.app-debug-4:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.giziku.app-main-6:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.giziku.app-main-6:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.giziku.app-main-6:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.giziku.app-main-6:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.giziku.app-main-6:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/drawable_kamera.png.flat",
+        "source": "com.example.giziku.app-main-6:/drawable/kamera.png"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/drawable_gambar_awal.png.flat",
+        "source": "com.example.giziku.app-main-6:/drawable/gambar_awal.png"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/drawable_ic_education.png.flat",
+        "source": "com.example.giziku.app-main-6:/drawable/ic_education.png"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.giziku.app-main-6:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.giziku.app-main-6:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/drawable_profile_placeholder.png.flat",
+        "source": "com.example.giziku.app-main-6:/drawable/profile_placeholder.png"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.giziku.app-main-6:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.giziku.app-main-6:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.giziku.app-main-6:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/drawable_gizi.png.flat",
+        "source": "com.example.giziku.app-main-6:/drawable/gizi.png"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/drawable_graph_placeholder.webp.flat",
+        "source": "com.example.giziku.app-main-6:/drawable/graph_placeholder.webp"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.giziku.app-main-6:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/drawable_back.png.flat",
+        "source": "com.example.giziku.app-main-6:/drawable/back.png"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/drawable_tracing_nutrisi.png.flat",
+        "source": "com.example.giziku.app-main-6:/drawable/tracing_nutrisi.png"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.giziku.app-main-6:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.example.giziku.app-main-6:/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/drawable_ic_graph.png.flat",
+        "source": "com.example.giziku.app-main-6:/drawable/ic_graph.png"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.giziku.app-main-6:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/xml_backup_rules.xml.flat",
+        "source": "com.example.giziku.app-main-6:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.giziku.app-debug-4:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.giziku.app-main-6:/mipmap-xxhdpi/ic_launcher.webp"
+    }
+]

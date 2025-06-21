@@ -1,0 +1,26 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable back
+drawable gambar_awal
+drawable gizi
+drawable graph_placeholder
+drawable ic_education
+drawable ic_graph
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable kamera
+drawable profile_placeholder
+drawable tracing_nutrisi
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Theme.Giziku
+xml backup_rules
+xml data_extraction_rules
